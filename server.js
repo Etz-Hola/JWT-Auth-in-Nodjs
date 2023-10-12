@@ -5,7 +5,7 @@ const path = require("path");
 const corsOptions = require("./Config/corsOption");
 const { logger } = require("./Middleware/logEvents");
 const errorHandler = require("./Middleware/errHandler");
-const PORT = process.env.PORT || 3300;
+const PORT = process.env.PORT || 4100;
 
 // BIULT IN
 app.use(express.urlencoded({ extended: false }));
