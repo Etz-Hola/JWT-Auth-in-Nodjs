@@ -5,17 +5,13 @@ const path = require("path");
 const corsOptions = require("./Config/corsOption");
 const { logger } = require("./Middleware/logEvents");
 const errorHandler = require("./Middleware/errHandler");
-const PORT = process.env.PORT || 4100;
+const verifyJWT = require("./Middleware/verifyJWT")
+const PORT = process.env.PORT || 4400;
 
 // BIULT IN
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// ROUTES
-app.use("/", require("./Routes/root"));
-app.use("/register", require("./Routes/register"));
-app.use("/auth", require("./Routes/auth"));
-app.use("/employees", require("./Routes/api/employees"));
 
 // STATIC ROUTES
 app.use("/", express.static(path.join(__dirname, "public")));
@@ -23,22 +19,16 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.use(logger);
 
 app.use(cors(corsOptions));
+ 
+// ROUTES
+app.use("/", require("./Routes/root"));
+app.use("/register", require("./Routes/register"));
+app.use("/auth", require("./Routes/auth"));
+app.use(verifyJWT)
+app.use("/employees", require("./Routes/api/employees"));
 
-// app.get("/", (req, res) => {
-//   res.sendFile("/views/index.html", { root: __dirname });
-// });
 
-// The OTHER METHOD WE CAN USE TO GET ROUTE
 
-// app.get("/",(req,res) =>{
-//   res.sendFile(path.join(__dirname, "views","index.html"))
-// })
-
-//ALTERNATIVE METHOD TO CREATE A ROUTE
-
-// ALTERNATIVE METHOD
-// app.get("/testing(.html)?" , (req,res) =>{
-//   res.redirect(301, "new-page.html")})
 
 // APP.ALL IS THE ROUTE HANDLER FOR ALL REQUESTS
 app.all("*", (req, res) => {
@@ -58,3 +48,4 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
+

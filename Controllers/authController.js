@@ -1,8 +1,6 @@
 const usersDB = {
   users: require("../Model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
+  setUsers: function (data) {this.users = data},
 };
 
 const bcrypt = require("bcrypt");
@@ -26,7 +24,7 @@ const handleLogin = async (req, res) => {
       const accessToken = jwt.sign(
         {"username": foundUser.username},
         process.env.ACCESS_TOKEN_SECRET,
-        {expiresIn: "120s"}
+        {expiresIn: "60s"}
       )
       const refreshToken = jwt.sign(
         {"username": foundUser.username},

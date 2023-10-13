@@ -13,3 +13,7 @@
 20231011	12:53:55	c422c0c7-086b-47e2-9a77-33bc3b8a6a7a	TypeError: Cannot read properties of undefined (reading 'id')
 20231011	12:54:07	35700f23-6072-44c0-b259-7f5b3e18543a	TypeError: Cannot read properties of undefined (reading 'id')
 20231011	12:55:35	504307dd-ea19-408c-9fe9-5b84daba4bad	TypeError: Cannot read properties of undefined (reading 'id')
+20231013	08:52:50	347c3358-bccd-4c69-94d2-c632fa5f2f00	SyntaxError: Unexpected token } in JSON at position 17
+20231013	08:52:55	dd53fee8-0c17-4a86-a22d-af8e20eda98d	SyntaxError: Unexpected token } in JSON at position 17
+20231013	09:40:48	a4ab327a-8fe1-4eb2-ae44-965a89a2ad42	SyntaxError: Unexpected token u in JSON at position 45
+20231013	09:41:12	5f82a6c5-c7f8-45da-bf05-5e610387d5bd	SyntaxError: Unexpected token u in JSON at position 45
