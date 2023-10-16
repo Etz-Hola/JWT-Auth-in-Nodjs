@@ -29,6 +29,7 @@ app.use("/auth", require("./Routes/auth"));
 app.use("/refresh", require("./Routes/refresh"));
 app.use(verifyJWT)
 app.use("/employees", require("./Routes/api/employees"));
+app.use("/logout", require("./Routes/logout"));
 
 
 

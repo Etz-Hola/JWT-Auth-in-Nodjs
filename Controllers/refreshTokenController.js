@@ -11,12 +11,13 @@ const usersDB = {
   
   
   const handleRefreshToken = (req, res) => {
-
     const cookies = req.cookies
-    if(cookies?.jwt) return res.sendStatus(401)
-
+    // console.log(cookies);
+    if(!cookies?.jwt) return res.sendStatus(401)
+    // console.log(cookies.jwt);
     const refreshToken = cookies.jwt
-    const foundUser = usersDB.users.find((person) => person.username === refreshToken);
+
+    const foundUser = usersDB.users.find(person => person.username === refreshToken);
     if (!foundUser) return res.sendStatus(401); //unauthorize
 
     jwt.verify (
