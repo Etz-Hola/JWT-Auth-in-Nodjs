@@ -6,11 +6,13 @@ const corsOptions = require("./Config/corsOption");
 const { logger } = require("./Middleware/logEvents");
 const errorHandler = require("./Middleware/errHandler");
 const verifyJWT = require("./Middleware/verifyJWT")
-const PORT = process.env.PORT || 4400;
+const cookieParser = require('cookie-parser')
+const PORT = process.env.PORT || 4000;
 
 // BIULT IN
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cookieParser())
 
 
 // STATIC ROUTES
@@ -24,6 +26,7 @@ app.use(cors(corsOptions));
 app.use("/", require("./Routes/root"));
 app.use("/register", require("./Routes/register"));
 app.use("/auth", require("./Routes/auth"));
+app.use("/refresh", require("./Routes/refresh"));
 app.use(verifyJWT)
 app.use("/employees", require("./Routes/api/employees"));
 

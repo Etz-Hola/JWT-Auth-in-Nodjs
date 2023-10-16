@@ -162,3 +162,6 @@
 20231013	11:58:18	bf0ebaa9-a2ad-4e10-9cb5-eaa1337ce154	GET	undefined	/employees
 20231013	11:58:36	3d8764cf-2570-4eb0-aa80-c3f65cb812c5	GET	undefined	/employees
 20231013	11:58:45	2131f550-1120-437e-947e-939aeeec1d86	POST	undefined	/employees
+20231013	12:11:15	d16bb244-5680-46ca-8f8d-73d854228f58	GET	undefined	/employees
+20231013	13:12:18	b696ac0f-3c6c-4c10-919d-5ce45c55899f	POST	undefined	/auth
+20231013	13:16:33	82063115-6c7c-4ef1-93a5-3c5cd7b43acc	POST	undefined	/auth
