@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-employeesController = require("../../Controllers/employeesController");
-
+const employeesController = require("../../Controllers/employeesController");
 
 // http request methods
 router .route("/")
@@ -13,3 +12,4 @@ router .route("/")
 router.route("/:id").get(employeesController.getEmployee);
 
 module.exports = router;
+
